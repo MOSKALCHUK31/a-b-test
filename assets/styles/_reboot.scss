@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: $global-font-family;
+    font-weight: 400;
+    color: $global-black;
+    overflow-x: hidden;
+}
+
+a {
+    color: $global-black;
+    text-decoration: none;
+    cursor: pointer;
+}
