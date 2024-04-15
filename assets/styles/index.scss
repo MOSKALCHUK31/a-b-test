@@ -1,10 +1,6 @@
 @import 'library/reset';
 
-// Variables
-@import 'variables';
-@import 'mixins';
-
 // Application
+@import 'variables';
 @import 'fonts';
 @import 'reboot';
-@import 'hidden';

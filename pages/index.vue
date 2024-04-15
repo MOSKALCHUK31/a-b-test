@@ -1,11 +1,14 @@
 <template>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+    <component :is="activeView"/>
 </template>
 
-<script setup></script>
+<script setup>
+import HomeView from '~/components/views/HomeView/HomeView'
+import HomeViewMobile from '~/components/views/HomeView/HomeViewMobile'
+import { computed } from 'vue'
 
-<style scoped lang="scss">
+const { isMobileOrTablet } = useDevice()
+const activeView = computed(() => isMobileOrTablet ? HomeViewMobile : HomeView)
+</script>
 
-</style>
+
