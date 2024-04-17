@@ -27,7 +27,7 @@ const props = defineProps({
     color: {
         type: String,
         required: true,
-        validator: v => ['black-20', 'white'].includes(v)
+        validator: v => ['black-20', 'white', 'orange', 'white-black'].includes(v)
     },
     fullWidth: {
         type: Boolean,
@@ -40,6 +40,7 @@ const props = defineProps({
 .button {
     @apply flex items-center justify-center;
     @apply text-center rounded-xl;
+    @apply transition;
 
     &_size {
         &_large {
@@ -63,6 +64,16 @@ const props = defineProps({
             :deep(svg) {
                 @apply fill-green;
             }
+        }
+
+        &_white-black {
+            @apply border-1 border-solid border-black/20 bg-white text-black;
+            @apply hover:bg-black hover:text-white;
+        }
+
+        &_orange {
+            @apply bg-lightOrange text-black;
+            @apply hover:bg-lightestOrange;
         }
     }
 

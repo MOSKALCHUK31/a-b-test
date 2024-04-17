@@ -8,12 +8,14 @@
     </NuxtLink>
     <button
         :class="['button', `button_size_${ size }`, `button_color_${ color }`, { 'button_full': fullWidth }]"
+        @click="emit('onClick')"
     >
         <slot/>
     </button>
 </template>
 
 <script setup>
+const emit = defineEmits(['onClick'])
 const props = defineProps({
     to: {
         type: String,
@@ -22,12 +24,12 @@ const props = defineProps({
     size: {
         type: String,
         required: true,
-        validator: v => ['large'].includes(v)
+        validator: v => ['medium', 'large'].includes(v)
     },
     color: {
         type: String,
         required: true,
-        validator: v => ['white', 'black'].includes(v)
+        validator: v => ['white', 'black', 'transparent-black', 'transparent-white'].includes(v)
     },
     fullWidth: {
         type: Boolean,
@@ -42,6 +44,10 @@ const props = defineProps({
     @apply transition;
 
     &_size {
+        &_medium {
+            @apply h-10 px-4 text-base font-semibold;
+        }
+
         &_large {
             @apply h-14 text-base font-bold;
         }
@@ -56,6 +62,14 @@ const props = defineProps({
         &_black {
             @apply bg-black text-white;
             @apply hover:bg-green;
+        }
+
+        &_transparent-black {
+            @apply bg-transparent text-black/40;
+        }
+
+        &_transparent-white {
+            @apply bg-transparent text-white;
         }
     }
 

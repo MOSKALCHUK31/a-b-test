@@ -18,17 +18,24 @@ export default {
                 972: '972px',
                 280: '280px'
             },
+            maxWidth: {
+              400: '400px'
+            },
             backgroundImage: {
                 darkThemeImage: 'url("/images/image-bg-circles.png")',
                 lightThemeImage: 'url("/images/image-bg-planets.png")'
             },
             colors: {
+                black100: '#121826',
                 blue: '#66EDFF',
                 darkBlue: '#4EAAFF',
                 purple: '#495EEE',
                 lightPurple: '#6C89FF',
                 red: '#FF0000',
                 lightGrey: '#CDCDCD',
+                darkGrey: '#6C727F',
+                lightestOrange: '#FFDA80',
+                lightOrange: '#FEC538',
                 orange: '#FF8D24',
                 green: '#01C120'
             },

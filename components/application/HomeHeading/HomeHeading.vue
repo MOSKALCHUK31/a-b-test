@@ -27,6 +27,7 @@
                 :color="buttonColor"
                 full-width
                 size="large"
+                @on-click="handleClick"
             >
                 Get my plan
             </AppButton>
@@ -39,8 +40,10 @@ import AppButton from '~/components/ui/Buttons/AppButton'
 
 import { computed } from 'vue'
 import { useRootStore } from '~/store/root.js'
+import { useModalsStore } from '~/store/modals.js'
 
 const rootStore = useRootStore()
+const modalsStore = useModalsStore()
 const { theme } = storeToRefs(rootStore)
 
 const isStudy = computed(() => theme.value === 'dark')
@@ -48,4 +51,8 @@ const buttonColor = computed(() => theme.value === 'light'
     ? 'black'
     : 'white'
 )
+
+const handleClick = () => {
+    modalsStore.TOGGLE_PAYMENT_MODAL()
+}
 </script>

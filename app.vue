@@ -4,10 +4,12 @@
         <NuxtLayout>
             <NuxtPage/>
         </NuxtLayout>
+        <ModalsHolder/>
     </div>
 </template>
 
 <script setup>
+import ModalsHolder from '~/components/modals/ModalsHolder/ModalsHolder'
 import { useRootStore } from '~/store/root.js'
 
 const rootStore = useRootStore()

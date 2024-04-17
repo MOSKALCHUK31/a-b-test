@@ -1,28 +1,3 @@
-<!--<template>-->
-<!--    <div class="mb-4 text-32 text-white leading-38 font-extrabold">-->
-<!--        <span class="text-darkBlue">Start</span>-->
-<!--        your learning journey-->
-<!--        <span class="text-darkBlue">now</span>-->
-<!--    </div>-->
-<!--    <div class="mb-8 text-white text-2xl font-semibold">-->
-<!--        Get a-->
-<!--        <span class="font-extrabold">-->
-<!--            <span class="text-darkBlue">Planet</span>Learn-->
-<!--        </span>-->
-<!--        plan to rock self-learning-->
-<!--    </div>-->
-<!--    <div class="mb-8">-->
-<!--        <AppButton color="white" size="large" full-width>-->
-<!--            Get my plan-->
-<!--        </AppButton>-->
-<!--    </div>-->
-<!--</template>-->
-
-<!--<script setup>-->
-<!--import AppButton from '~/components/ui/Buttons/AppButton'-->
-<!--</script>-->
-
-
 <template>
     <div>
         <div class="
@@ -52,6 +27,7 @@
                 :color="buttonColor"
                 full-width
                 size="large"
+                @on-click="handleClick"
             >
                 Get my plan
             </AppButton>
@@ -64,8 +40,10 @@ import AppButton from '~/components/ui/Buttons/AppButton'
 
 import { computed } from 'vue'
 import { useRootStore } from '~/store/root.js'
+import { useModalsStore } from '~/store/modals.js'
 
 const rootStore = useRootStore()
+const modalsStore = useModalsStore()
 const { theme } = storeToRefs(rootStore)
 
 const isStudy = computed(() => theme.value === 'dark')
@@ -73,4 +51,8 @@ const buttonColor = computed(() => theme.value === 'light'
     ? 'black'
     : 'white'
 )
+
+const handleClick = () => {
+    modalsStore.TOGGLE_PAYMENT_MODAL()
+}
 </script>
