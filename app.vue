@@ -35,6 +35,8 @@ useHead({
         ]
     }
 })
+
+console.log('test dev')
 </script>
 
 <style lang="scss">
