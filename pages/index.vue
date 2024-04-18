@@ -10,6 +10,8 @@ import { computed } from 'vue'
 
 const { isMobileOrTablet } = useDevice()
 const activeView = computed(() => isMobileOrTablet ? HomeViewMobile : HomeView)
+
+console.log('page')
 </script>
 
 
