@@ -35,6 +35,7 @@ useHead({
         ]
     }
 })
+console.log('app ')
 </script>
 
 <style lang="scss">
